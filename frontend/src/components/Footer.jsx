@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../App'
-import { resolveMediaUrl } from '../lib/media'
-import { Facebook, Youtube, Linkedin, Phone, Mail, MapPin, Dot } from 'lucide-react'
+import { Facebook, Youtube, Linkedin, Instagram, Phone, Mail, MapPin, Dot } from 'lucide-react'
 
 const XIcon = ({ size = 16, className = '' }) => (
   <svg viewBox="0 0 24 24" width={size} height={size} className={className} fill="currentColor">
@@ -25,9 +24,9 @@ export default function Footer() {
     : (settings?.footer_desc_en ?? t.footer_desc)
 
   return (
-    <footer className="bg-dark text-white overflow-hidden">
+    <footer className="bg-primary text-white overflow-hidden">
       <div
-        className="h-16 bg-gray-50"
+        className="h-16 bg-white/10"
         style={{ clipPath: 'ellipse(55% 100% at 50% 0%)' }}
       />
 
@@ -35,10 +34,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-10 gap-x-8 items-start">
           <div className={`lg:col-span-5 ${isRtl ? 'text-right' : 'text-left'}`}>
 <img
-  src={resolveMediaUrl(settings?.logo_url) || '/logo.png'}
+  src="/logowhite.png"
   alt={settings?.site_name_en || settings?.site_name_ar || 'Logo'}
   className={`h-16 w-auto mb-4 ${isRtl ? 'mr-0 ml-auto' : ''}`}
-  onError={e => { e.currentTarget.src = '/logo.png' }}
 />
 
             <h3 className="text-xl font-bold text-white mb-3">
@@ -47,7 +45,7 @@ export default function Footer() {
                 : 'Yemen Heritage for Peace Organization'}
             </h3>
 
-            <p className="text-gray-400 text-sm leading-relaxed max-w-[560px]">
+            <p className="text-white/80 text-sm leading-relaxed max-w-[560px]">
               {footerDesc}
             </p>
           </div>
@@ -67,7 +65,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     to={item.href}
-                    className={`text-gray-400 hover:text-primary transition-colors flex items-center gap-2 ${isRtl ? 'justify-start' : 'justify-start'}`}
+                    className={`text-white/80 hover:text-white transition-colors flex items-center gap-2 ${isRtl ? 'justify-start' : 'justify-start'}`}
                   >
                     <Dot size={18} className="text-primary -ms-2 shrink-0" />
                     <span>{item.label}</span>
@@ -82,7 +80,7 @@ export default function Footer() {
               {t.contact_title}
             </h4>
 
-            <ul className="space-y-3 text-sm text-gray-400">
+            <ul className="space-y-3 text-sm text-white/80">
               {phone && (
                 <li className={`flex items-start gap-2 ${isRtl ? 'justify-start' : 'justify-start'}`}>
                   <Phone size={16} className="text-primary mt-0.5 shrink-0" />
@@ -113,26 +111,16 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <div className="flex items-center gap-3">
-            {settings?.social_x && (
+          <div className="flex items-center gap-3 flex-wrap justify-center">
+            {settings?.social_facebook && (
               <a
-                href={settings.social_x}
+                href={settings.social_facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
+                aria-label="Facebook"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
               >
-                <XIcon size={16} />
-              </a>
-            )}
-
-            {settings?.social_linkedin && (
-              <a
-                href={settings.social_linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
-              >
-                <Linkedin size={16} />
+                <Facebook size={18} />
               </a>
             )}
 
@@ -141,26 +129,52 @@ export default function Footer() {
                 href={settings.social_youtube}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
+                aria-label="YouTube"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
               >
-                <Youtube size={16} />
+                <Youtube size={18} />
               </a>
             )}
 
-            {settings?.social_facebook && (
+            {settings?.social_linkedin && (
               <a
-                href={settings.social_facebook}
+                href={settings.social_linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
+                aria-label="LinkedIn"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
               >
-                <Facebook size={16} />
+                <Linkedin size={18} />
+              </a>
+            )}
+
+            {settings?.social_x && (
+              <a
+                href={settings.social_x}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="X"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
+              >
+                <XIcon size={18} />
+              </a>
+            )}
+
+            {settings?.social_instagram && (
+              <a
+                href={settings.social_instagram}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
+              >
+                <Instagram size={18} />
               </a>
             )}
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-10 pt-6 text-center text-sm text-gray-500">
+        <div className="border-t border-white/10 mt-10 pt-6 text-center text-sm text-white/70">
           © {year} {isRtl
             ? 'منظمة تراث اليمن لأجل السلام'
             : 'Yemen Heritage for Peace Organization'} - {t.rights}
