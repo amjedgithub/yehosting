@@ -26,7 +26,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-white overflow-hidden">
       <div
-        className="h-16 bg-white/10"
+        className="h-16 bg-white/5"
         style={{ clipPath: 'ellipse(55% 100% at 50% 0%)' }}
       />
 
@@ -67,7 +67,7 @@ export default function Footer() {
                     to={item.href}
                     className={`text-white/80 hover:text-white transition-colors flex items-center gap-2 ${isRtl ? 'justify-start' : 'justify-start'}`}
                   >
-                    <Dot size={18} className="text-primary -ms-2 shrink-0" />
+                    <Dot size={18} className="text-white/60 -ms-2 shrink-0" />
                     <span>{item.label}</span>
                   </Link>
                 </li>
@@ -80,20 +80,24 @@ export default function Footer() {
               {t.contact_title}
             </h4>
 
-            <ul className="space-y-3 text-sm text-white/80">
+            <ul className="space-y-3 text-sm text-white/90">
               {phone && (
-                <li className={`flex items-start gap-2 ${isRtl ? 'justify-start' : 'justify-start'}`}>
-                  <Phone size={16} className="text-primary mt-0.5 shrink-0" />
+                <li className={`flex items-start gap-3 ${isRtl ? 'justify-start' : 'justify-start'}`}>
+                  <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <Phone size={14} className="text-white" />
+                  </span>
                   <span dir="ltr">{phone}</span>
                 </li>
               )}
 
               {email && (
-                <li className={`flex items-start gap-2 ${isRtl ? 'justify-start' : 'justify-start'}`}>
-                  <Mail size={16} className="text-primary mt-0.5 shrink-0" />
+                <li className={`flex items-start gap-3 ${isRtl ? 'justify-start' : 'justify-start'}`}>
+                  <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <Mail size={14} className="text-white" />
+                  </span>
                   <a
                     href={`mailto:${email}`}
-                    className="hover:text-primary transition-colors break-all"
+                    className="hover:text-white transition-colors break-all"
                   >
                     {email}
                   </a>
@@ -101,8 +105,10 @@ export default function Footer() {
               )}
 
               {address && (
-                <li className={`flex items-start gap-2 ${isRtl ? 'justify-start' : 'justify-start'}`}>
-                  <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
+                <li className={`flex items-start gap-3 ${isRtl ? 'justify-start' : 'justify-start'}`}>
+                  <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <MapPin size={14} className="text-white" />
+                  </span>
                   <span>{address}</span>
                 </li>
               )}
@@ -118,7 +124,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white shadow-sm transition hover:scale-105"
               >
                 <Facebook size={18} />
               </a>
@@ -130,7 +136,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="YouTube"
-                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white shadow-sm transition hover:scale-105"
               >
                 <Youtube size={18} />
               </a>
@@ -142,7 +148,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white shadow-sm transition hover:scale-105"
               >
                 <Linkedin size={18} />
               </a>
@@ -154,7 +160,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="X"
-                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white shadow-sm transition hover:scale-105"
               >
                 <XIcon size={18} />
               </a>
@@ -166,7 +172,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white shadow-sm transition hover:scale-105"
               >
                 <Instagram size={18} />
               </a>
