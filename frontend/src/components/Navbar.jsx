@@ -143,7 +143,7 @@ export default function Navbar() {
         </div>
 
         {/* Main nav */}
-        <div className="hidden md:block bg-white border-b border-gray-200 shadow-sm">
+        <div className="bg-white border-b border-gray-200 shadow-sm">
           <div className="w-full px-4 py-3">
             <div className="w-full flex flex-wrap items-center justify-between gap-3 bg-white rounded-[999px] border border-gray-200 px-4 py-2 shadow-sm">
               <div className="flex flex-wrap items-center justify-center gap-3 flex-1 min-w-[260px]">
@@ -201,10 +201,18 @@ export default function Navbar() {
                 </button>
               </div>
             </div>
-            <div className="mt-2 flex justify-between md:hidden">
-              <button className="text-dark p-2" onClick={() => setMobileOpen((o) => !o)}>
-                {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
+            <div className="mt-2 flex justify-between md:hidden items-center">
+              <div className="flex items-center gap-2">
+                <img src="/logowhite.png" alt="logo" className="h-10 w-auto" />
+                <button className="text-dark p-2" onClick={() => setMobileOpen((o) => !o)}>
+                  {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+                </button>
+              </div>
+              <div className="flex items-center gap-2">
+                <a href={settings?.social_instagram || '#'} target="_blank" rel="noreferrer" className="w-9 h-9 bg-primary rounded-full flex items-center justify-center text-white shadow-sm">
+                  <Instagram size={16} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
