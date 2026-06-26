@@ -26,8 +26,8 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-white overflow-hidden">
       <div
-        className="h-16 bg-white/5"
-        style={{ clipPath: 'ellipse(55% 100% at 50% 0%)' }}
+        className="h-24 sm:h-28 bg-white/10"
+        style={{ clipPath: 'ellipse(75% 100% at 50% 0%)' }}
       />
 
       <div className="w-full max-w-[1180px] mx-auto px-6 sm:px-8 lg:px-10 py-12">
@@ -124,7 +124,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white shadow-sm transition hover:scale-105"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
               >
                 <Facebook size={18} />
               </a>
@@ -136,7 +136,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="YouTube"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white shadow-sm transition hover:scale-105"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
               >
                 <Youtube size={18} />
               </a>
@@ -148,7 +148,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white shadow-sm transition hover:scale-105"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
               >
                 <Linkedin size={18} />
               </a>
@@ -160,7 +160,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="X"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white shadow-sm transition hover:scale-105"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
               >
                 <XIcon size={18} />
               </a>
@@ -172,7 +172,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white shadow-sm transition hover:scale-105"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm transition hover:scale-105"
               >
                 <Instagram size={18} />
               </a>
