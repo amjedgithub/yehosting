@@ -11,6 +11,7 @@ import {
   Facebook,
   Youtube,
   Linkedin,
+  Instagram,
 } from 'lucide-react'
 
 const DEFAULT_LOGO = '/logo.png'
@@ -107,7 +108,7 @@ export default function Navbar() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
         {/* Top bar */}
         <div className="bg-primary py-2 px-4 hidden md:block">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="w-full flex items-center justify-between px-4">
             <div className="flex items-center gap-2">
               <img src="/logowhite.png" alt={settings?.site_name_en || settings?.site_name_ar || 'logo'} className="h-10 w-auto" />
               <div className="flex flex-col text-white leading-tight">
@@ -132,6 +133,10 @@ export default function Navbar() {
               <a href={settings?.social_x || '#'} target="_blank" rel="noreferrer" aria-label="X"
                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm">
                 <XIcon size={18} />
+              </a>
+              <a href={settings?.social_instagram || '#'} target="_blank" rel="noreferrer" aria-label="Instagram"
+                className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm">
+                <Instagram size={18} />
               </a>
             </div>
           </div>
